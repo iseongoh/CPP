@@ -18,19 +18,15 @@ int main() {
 
 
     if (만 > 0) 
-    std::cout << (만 == 1 ? "만 " : std::to_string(만) + "만 ");
-
+        std::cout << (만 == 1 ? "만 " : std::to_string(만) + "만 ");
     if (천 > 0)
-    std::cout << (천 == 1 ? "천 " : std::to_string(천) + "천 ");
-
+        std::cout << (천 == 1 ? "천 " : std::to_string(천) + "천 ");
     if (백 > 0) 
-    std::cout << (백 == 1 ? "백 " : std::to_string(백) + "백 ");
-
+        std::cout << (백 == 1 ? "백 " : std::to_string(백) + "백 ");
     if (십 > 0) 
-    std::cout << (십 == 1 ? "십 " : std::to_string(십) + "십 ");
-
+        std::cout << (십 == 1 ? "십 " : std::to_string(십) + "십 ");
     if (일 > 0) 
-    std::cout << 일;
+        std::cout << 일;
 
     std::cout << "\n";
     
