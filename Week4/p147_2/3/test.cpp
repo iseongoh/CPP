@@ -1,4 +1,5 @@
 #include "test.hpp"
+using namespace std;
 
 int reverse(int x)
 {
