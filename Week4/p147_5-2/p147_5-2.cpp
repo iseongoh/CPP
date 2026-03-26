@@ -11,7 +11,7 @@ void russianroulette(int nTurns, int nBullets, int nChambers)
     for (int i = 0; i < nTurns; i++)
         alivePlayers[i] = 1;
 
-    printf("\n총을 돌렸습니다. %d번부터 시작합니다.\n", start + 1);
+    printf("총을 돌렸습니다. %d번부터 시작합니다.\n", start + 1);
         
 
 
@@ -21,17 +21,17 @@ void russianroulette(int nTurns, int nBullets, int nChambers)
         }
 
         int pos = rand() % nChambers;
-        printf("[%d번]\t탄창을 무작위로 돌렸습니다.\n", start + 1);
-        printf("\t엔터를 누르면 격발됩니다...");
+        printf("%d번 탄창을 무작위로 돌렸습니다.\n", start + 1);
+        printf("엔터를 누르면 격발됩니다...");
         getchar();
         if (pos < nBullets) {
-            printf("\t빵~~~~~!!!\n");
-            printf("-----> %d번 참가자가 총에 맞았습니다.\n", start + 1);
+            printf("빵\n");
+            printf("%d번 참가자가 총에 맞았습니다.\n", start + 1);
             alivePlayers[start] = 0;  
             aliveCount--;  
             nBullets--;  
         } else {
-            printf("\t휴~~~ 살았습니다!!!\n");
+            printf("휴~~~ 살았습니다!!!\n");
         }
 
         do {
@@ -39,10 +39,24 @@ void russianroulette(int nTurns, int nBullets, int nChambers)
         } while (alivePlayers[start] == 0);
     }
 
-    printf("\n게임 종료! 모든 총알이 발사되었고, 남은 사람은 생존입니다!\n");
+    printf("게임 종료!\n");
 }
 int main()
 {
+    int nTurns, nBullets, nChambers;
+    srand((unsigned)time(NULL));
 
+    printf("게임 인원 (예: 2) ==> ");
+    scanf("%d", &nTurns);
+
+    printf("탄창 개수 (예: 6) ==> ");
+    scanf("%d", &nChambers);  
+
+    printf("총알 개수 (전체 탄창 개수보다 작게 입력) ==> ");
+    scanf("%d", &nBullets);  
+    getchar();  
+
+    russianroulette(nTurns, nBullets, nChambers);
+    
     return 0;
 }
